@@ -6,19 +6,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Employee Management Screen</title>
+<title>Tela de Gerenciamento de funcionários</title>
 </head>
 <body>
 	<div align="center">
-		<h1>Employee List</h1>
+		<h1>Lista de Funcionários</h1>
 		
 		<table border="1">
 
-			<th>Name</th>
-			<th>Email</th>
-			<th>Address</th>
-			<th>Telephone</th>
-			<th>Action</th>
+			<th>NOME</th>
+			<th>EMAIL</th>
+			<th>ENDEREÇO</th>
+			<th>TELEFONE</th>
+			<th>AÇÃO</th>
 
 			<c:forEach var="employee" items="${listEmployee}">
 				<tr>
@@ -27,15 +27,15 @@
 					<td>${employee.email}</td>
 					<td>${employee.address}</td>
 					<td>${employee.telephone}</td>
-					<td><a href="editEmployee?id=${employee.id}">Edit</a>
+					<td><a href="editEmployee?id=${employee.id}">Editar</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="deleteEmployee?id=${employee.id}">Delete</a></td>
+						href="deleteEmployee?id=${employee.id}">Deletar</a></td>
 
 				</tr>
 			</c:forEach>
 		</table>
 		<h4>
-			New Employee Register <a href="newEmployee">here</a>
+			Registrar um novo funcionário <a href="newEmployee">Clique Aqui</a>
 		</h4>
 	</div>
 </body>
