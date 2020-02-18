@@ -23,10 +23,10 @@
 			<c:forEach var="employee" items="${listEmployee}">
 				<tr>
 
-					<td>${employee.name}</td>
+					<td>${employee.nome}</td>
 					<td>${employee.email}</td>
-					<td>${employee.address}</td>
-					<td>${employee.telephone}</td>
+					<td>${employee.endereco}</td>
+					<td>${employee.telefone}</td>
 					<td><a href="editEmployee?id=${employee.id}">Editar</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
 						href="deleteEmployee?id=${employee.id}">Deletar</a></td>
