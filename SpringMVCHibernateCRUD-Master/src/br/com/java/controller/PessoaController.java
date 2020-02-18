@@ -14,63 +14,63 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.java.model.Employee;
-import br.com.java.service.EmployeeService;
+import br.com.java.model.Pessoa;
+import br.com.java.service.PessoaService;
 
 
 @Controller
-public class EmployeeController {
+public class PessoaController {
 
 	private static final Logger logger = Logger
-			.getLogger(EmployeeController.class);
+			.getLogger(PessoaController.class);
 
-	public EmployeeController() {
-		System.out.println("EmployeeController()");
+	public PessoaController() {
+		System.out.println("PessoaController()");
 	}
 
 	@Autowired
-	private EmployeeService employeeService;
+	private PessoaService pessoaService;
 
 	@RequestMapping(value = "/")
-	public ModelAndView listEmployee(ModelAndView model) throws IOException {
-		List<Employee> listEmployee = employeeService.getAllEmployees();
-		model.addObject("listEmployee", listEmployee);
+	public ModelAndView listPessoa(ModelAndView model) throws IOException {
+		List<Pessoa> listPessoa = pessoaService.getAllPessoas();
+		model.addObject("listPessoa", listPessoa);
 		model.setViewName("home");
 		return model;
 	}
 
 	@RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
 	public ModelAndView newContact(ModelAndView model) {
-		Employee employee = new Employee();
-		model.addObject("employee", employee);
+		Pessoa pessoa = new Pessoa();
+		model.addObject("pessoa", pessoa);
 		model.setViewName("EmployeeForm");
 		return model;
 	}
 
 	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-	public ModelAndView saveEmployee(@ModelAttribute Employee employee) {
-		if (employee.getId() == 0) { // if employee id is 0 then creating the
+	public ModelAndView saveEmployee(@ModelAttribute Pessoa pessoa) {
+		if (pessoa.getId() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
-			employeeService.addEmployee(employee);
+			pessoaService.addPessoa(pessoa);
 		} else {
-			employeeService.updateEmployee(employee);
+			pessoaService.updatePessoa(pessoa);
 		}
 		return new ModelAndView("redirect:/");
 	}
 
 	@RequestMapping(value = "/deleteEmployee", method = RequestMethod.GET)
 	public ModelAndView deleteEmployee(HttpServletRequest request) {
-		int employeeId = Integer.parseInt(request.getParameter("id"));
-		employeeService.deleteEmployee(employeeId);
+		int pessoaId = Integer.parseInt(request.getParameter("id"));
+		pessoaService.deletePessoa(pessoaId);
 		return new ModelAndView("redirect:/");
 	}
 
 	@RequestMapping(value = "/editEmployee", method = RequestMethod.GET)
 	public ModelAndView editContact(HttpServletRequest request) {
-		int employeeId = Integer.parseInt(request.getParameter("id"));
-		Employee employee = employeeService.getEmployee(employeeId);
+		int pessoaId = Integer.parseInt(request.getParameter("id"));
+		Pessoa pessoa = pessoaService.getPessoa(pessoaId);
 		ModelAndView model = new ModelAndView("EmployeeForm");
-		model.addObject("employee", employee);
+		model.addObject("pessoa", pessoa);
 
 		return model;
 	}

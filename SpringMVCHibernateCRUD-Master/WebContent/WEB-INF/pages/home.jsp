@@ -20,16 +20,16 @@
 			<th>TELEFONE</th>
 			<th>AÇÃO</th>
 
-			<c:forEach var="employee" items="${listEmployee}">
+			<c:forEach var="pessoa" items="${listPessoa}">
 				<tr>
 
-					<td>${employee.nome}</td>
-					<td>${employee.email}</td>
-					<td>${employee.endereco}</td>
-					<td>${employee.telefone}</td>
-					<td><a href="editEmployee?id=${employee.id}">Editar</a>
+					<td>${pessoa.nome}</td>
+					<td>${pessoa.email}</td>
+					<td>${pessoa.endereco}</td>
+					<td>${pessoa.telefone}</td>
+					<td><a href="editEmployee?id=${pessoa.id}">Editar</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="deleteEmployee?id=${employee.id}">Deletar</a></td>
+						href="deleteEmployee?id=${pessoa.id}">Deletar</a></td>
 
 				</tr>
 			</c:forEach>

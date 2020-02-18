@@ -2,18 +2,18 @@ package br.com.java.dao;
 
 import java.util.List;
 
-import br.com.java.model.Employee;
+import br.com.java.model.Pessoa;
 
 
-public interface EmployeeDAO {
+public interface PessoaDAO {
 
-	public void addEmployee(Employee employee);
+	public void addPessoa(Pessoa pessoa);
 
-	public List<Employee> getAllEmployees();
+	public List<Pessoa> getAllPessoas();
 
-	public void deleteEmployee(Integer employeeId);
+	public void deletePessoa(Integer pessoaId);
 
-	public Employee updateEmployee(Employee employee);
+	public Pessoa updatePessoa(Pessoa pessoa);
 
-	public Employee getEmployee(int employeeid);
+	public Pessoa getPessoa(int pessoaid);
 }

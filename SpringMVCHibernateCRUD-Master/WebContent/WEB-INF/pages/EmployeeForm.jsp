@@ -11,7 +11,7 @@
 <body>
     <div align="center">
         <h1>Novo/Editar Funcionário</h1>
-        <form:form action="saveEmployee" method="post" modelAttribute="employee">
+        <form:form action="saveEmployee" method="post" modelAttribute="pessoa">
         <table>
             <form:hidden path="id"/>
             <tr>

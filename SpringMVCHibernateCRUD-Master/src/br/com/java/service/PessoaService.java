@@ -2,19 +2,19 @@ package br.com.java.service;
 
 import java.util.List;
 
-import br.com.java.model.Employee;
+import br.com.java.model.Pessoa;
 
 
 
-public interface EmployeeService {
+public interface PessoaService {
 	
-	public void addEmployee(Employee employee);
+	public void addPessoa(Pessoa pessoa);
 
-	public List<Employee> getAllEmployees();
+	public List<Pessoa> getAllPessoas();
 
-	public void deleteEmployee(Integer employeeId);
+	public void deletePessoa(Integer pessoaId);
 
-	public Employee getEmployee(int employeeid);
+	public Pessoa getPessoa(int pessoaid);
 
-	public Employee updateEmployee(Employee employee);
+	public Pessoa updatePessoa(Pessoa pessoa);
 }

@@ -6,47 +6,47 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import br.com.java.model.Employee;
+import br.com.java.model.Pessoa;
 
 
 
 @Repository
-public class EmployeeDAOImpl implements EmployeeDAO {
+public class PessoaDAOImpl implements PessoaDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public void addEmployee(Employee employee) {
-		sessionFactory.getCurrentSession().saveOrUpdate(employee);
+	public void addPessoa(Pessoa pessoa) {
+		sessionFactory.getCurrentSession().saveOrUpdate(pessoa);
 
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Employee> getAllEmployees() {
+	public List<Pessoa> getAllPessoas() {
 
-		return sessionFactory.getCurrentSession().createQuery("from Employee")
+		return sessionFactory.getCurrentSession().createQuery("from Pessoa")
 				.list();
 	}
 
 	@Override
-	public void deleteEmployee(Integer employeeId) {
-		Employee employee = (Employee) sessionFactory.getCurrentSession().load(
-				Employee.class, employeeId);
-		if (null != employee) {
-			this.sessionFactory.getCurrentSession().delete(employee);
+	public void deletePessoa(Integer pessoaId) {
+		Pessoa pessoa = (Pessoa) sessionFactory.getCurrentSession().load(
+				Pessoa.class, pessoaId);
+		if (null != pessoa) {
+			this.sessionFactory.getCurrentSession().delete(pessoa);
 		}
 
 	}
 
-	public Employee getEmployee(int empid) {
-		return (Employee) sessionFactory.getCurrentSession().get(
-				Employee.class, empid);
+	public Pessoa getPessoa(int empid) {
+		return (Pessoa) sessionFactory.getCurrentSession().get(
+				Pessoa.class, empid);
 	}
 
 	@Override
-	public Employee updateEmployee(Employee employee) {
-		sessionFactory.getCurrentSession().update(employee);
-		return employee;
+	public Pessoa updatePessoa(Pessoa pessoa) {
+		sessionFactory.getCurrentSession().update(pessoa);
+		return pessoa;
 	}
 
 }

@@ -6,47 +6,47 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.java.dao.EmployeeDAO;
-import br.com.java.model.Employee;
+import br.com.java.dao.PessoaDAO;
+import br.com.java.model.Pessoa;
 
 
 
 @Service
 @Transactional
-public class EmployeeServiceImpl implements EmployeeService {
+public class PessoaServiceImpl implements PessoaService {
 
 	@Autowired
-	private EmployeeDAO employeeDAO;
+	private PessoaDAO pessoaDAO;
 
 	@Override
 	@Transactional
-	public void addEmployee(Employee employee) {
-		employeeDAO.addEmployee(employee);
-	}
-
-	@Override
-	@Transactional
-	public List<Employee> getAllEmployees() {
-		return employeeDAO.getAllEmployees();
+	public void addPessoa(Pessoa pessoa) {
+		pessoaDAO.addPessoa(pessoa);
 	}
 
 	@Override
 	@Transactional
-	public void deleteEmployee(Integer employeeId) {
-		employeeDAO.deleteEmployee(employeeId);
+	public List<Pessoa> getAllPessoas() {
+		return pessoaDAO.getAllPessoas();
 	}
 
-	public Employee getEmployee(int empid) {
-		return employeeDAO.getEmployee(empid);
+	@Override
+	@Transactional
+	public void deletePessoa(Integer pessoaId) {
+		pessoaDAO.deletePessoa(pessoaId);
 	}
 
-	public Employee updateEmployee(Employee employee) {
+	public Pessoa getPessoa(int empid) {
+		return pessoaDAO.getPessoa(empid);
+	}
+
+	public Pessoa updatePessoa(Pessoa pessoa) {
 		// TODO Auto-generated method stub
-		return employeeDAO.updateEmployee(employee);
+		return pessoaDAO.updatePessoa(pessoa);
 	}
 
-	public void setEmployeeDAO(EmployeeDAO employeeDAO) {
-		this.employeeDAO = employeeDAO;
+	public void setPessoaDAO(PessoaDAO pessoaDAO) {
+		this.pessoaDAO = pessoaDAO;
 	}
 
 }
