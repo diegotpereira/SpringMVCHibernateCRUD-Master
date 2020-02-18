@@ -20,16 +20,16 @@ public class Employee implements Serializable {
 	private int id;
 
 	@Column
-	private String name;
+	private String nome;
 
 	@Column
 	private String email;
 
 	@Column
-	private String address;
+	private String endereco;
 
 	@Column
-	private String telephone;
+	private String telefone;
 
 	public int getId() {
 		return id;
@@ -39,12 +39,12 @@ public class Employee implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getEmail() {
@@ -55,20 +55,20 @@ public class Employee implements Serializable {
 		this.email = email;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getEndereco() {
+		return endereco;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
-	public String getTelephone() {
-		return telephone;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 }
