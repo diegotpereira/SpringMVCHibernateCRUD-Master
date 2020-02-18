@@ -16,7 +16,7 @@
             <form:hidden path="id"/>
             <tr>
                 <td>Nome:</td>
-                <td><form:input path="name" /></td>
+                <td><form:input path="nome" /></td>
             </tr>
             <tr>
                 <td>Email:</td>
@@ -24,11 +24,11 @@
             </tr>
             <tr>
                 <td>Endereço:</td>
-                <td><form:input path="address" /></td>
+                <td><form:input path="endereco" /></td>
             </tr>
             <tr>
                 <td>Telefone:</td>
-                <td><form:input path="telephone" /></td>
+                <td><form:input path="telefone" /></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" value="Save"></td>
