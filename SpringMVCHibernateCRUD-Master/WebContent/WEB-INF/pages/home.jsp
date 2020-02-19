@@ -17,6 +17,7 @@
 		<table border="1">
 
 			<th>NOME</th>
+			<th>CPF</th>
 			<th>EMAIL</th>
 			<th>ENDEREÇO</th>
 			<th>TELEFONE</th>
@@ -26,6 +27,7 @@
 				<tr>
 
 					<td>${pessoa.nome}</td>
+					<td>${pessoa.cpf}</td>
 					<td>${pessoa.email}</td>
 					<td>${pessoa.endereco}</td>
 					<td>${pessoa.telefone}</td>
