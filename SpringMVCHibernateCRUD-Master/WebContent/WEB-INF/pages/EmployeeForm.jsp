@@ -20,6 +20,10 @@
                 <td>Nome:</td>
                 <td><form:input path="nome" /></td>
             </tr>
+             <tr>
+                <td>CPF:</td>
+                <td><form:input path="cpf" /></td>
+            </tr>
             <tr>
                 <td>Email:</td>
                 <td><form:input path="email" /></td>
