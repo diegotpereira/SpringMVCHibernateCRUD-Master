@@ -39,15 +39,15 @@ public class PessoaController {
 		return model;
 	}
 
-	@RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
+	@RequestMapping(value = "/newPessoa", method = RequestMethod.GET)
 	public ModelAndView newContact(ModelAndView model) {
 		Pessoa pessoa = new Pessoa();
 		model.addObject("pessoa", pessoa);
-		model.setViewName("EmployeeForm");
+		model.setViewName("PessoaCadForm");
 		return model;
 	}
 
-	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
+	@RequestMapping(value = "/savePessoa", method = RequestMethod.POST)
 	public ModelAndView saveEmployee(@ModelAttribute Pessoa pessoa) {
 		if (pessoa.getId() == 0) { // if employee id is 0 then creating the
 			// employee other updating the employee
@@ -58,18 +58,18 @@ public class PessoaController {
 		return new ModelAndView("redirect:/");
 	}
 
-	@RequestMapping(value = "/deleteEmployee", method = RequestMethod.GET)
+	@RequestMapping(value = "/deletePessoa", method = RequestMethod.GET)
 	public ModelAndView deleteEmployee(HttpServletRequest request) {
 		int pessoaId = Integer.parseInt(request.getParameter("id"));
 		pessoaService.deletePessoa(pessoaId);
 		return new ModelAndView("redirect:/");
 	}
 
-	@RequestMapping(value = "/editEmployee", method = RequestMethod.GET)
+	@RequestMapping(value = "/editPessoa", method = RequestMethod.GET)
 	public ModelAndView editContact(HttpServletRequest request) {
 		int pessoaId = Integer.parseInt(request.getParameter("id"));
 		Pessoa pessoa = pessoaService.getPessoa(pessoaId);
-		ModelAndView model = new ModelAndView("EmployeeForm");
+		ModelAndView model = new ModelAndView("PessoaCadForm");
 		model.addObject("pessoa", pessoa);
 
 		return model;
