@@ -31,15 +31,15 @@
 					<td>${pessoa.email}</td>
 					<td>${pessoa.endereco}</td>
 					<td>${pessoa.telefone}</td>
-					<td><a href="editEmployee?id=${pessoa.id}">Editar</a>
+					<td><a href="editPessoa?id=${pessoa.id}">Editar</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="deleteEmployee?id=${pessoa.id}">Deletar</a></td>
+						href="deletePessoa?id=${pessoa.id}">Deletar</a></td>
 
 				</tr>
 			</c:forEach>
 		</table>
 		<h4>
-			Registrar um novo funcionário <a href="newEmployee">Clique Aqui</a>
+			Novo funcionário <a href="newPessoa">Clique Aqui</a>
 		</h4>
 	</div>
 </body>
